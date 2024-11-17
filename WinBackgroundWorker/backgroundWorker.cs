@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Forms;
 
 namespace WinBackgroundWorker
 {
+
     public partial class backgroundWorker : Form
     {
         public backgroundWorker()
@@ -53,7 +55,8 @@ namespace WinBackgroundWorker
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            int i; 
+            int i;
+            bool Cancel;
             i = int.Parse(e.Argument.ToString());
             for (int j = i; j <= i; j++)
             {
@@ -89,5 +92,7 @@ namespace WinBackgroundWorker
         {
             backgroundWorker1.CancelAsync();
         }
-    }
+        
+        
+    }   
 }
